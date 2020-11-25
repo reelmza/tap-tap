@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  background: #333;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", arial;
+}
+
+.main-container {
+  background: rgb(240, 199, 199);
+
+  height: 100%;
+  width: 100%;
+}
+
+.start-items,
+.game-container {
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Start button Items */
+
+.s-container {
+  border: solid 3px #000;
+  height: 8%;
+  width: 40%;
+
+  border-radius: 40px;
+  box-shadow: inset #000 -2px -3px 1px;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  cursor: pointer;
+}
+
+.s-container:hover {
+  background: greenyellow;
+}
+
+.s-heading {
+  font-size: 8em;
+  margin-bottom: 5px;
+}
+
+.s-ball {
+  height: 30px;
+  width: 30px;
+  border: solid 2px #000;
+  box-shadow: inset #000 -2px -3px 1px;
+
+  background: green;
+
+  margin-left: 5%;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.s-start {
+  font-size: 1.2em;
+  margin-left: 10px;
+
+  margin-top: -5px;
+  font-weight: bold;
+}
+
+/* Game container  */
+.game-container {
+  font-size: 10em;
+  justify-content: space-between;
+}
+
+.game-container marquee {
+  width: 50px;
+  height: 30px;
+}
+
+.game-record-bar {
+  background: #008055;
+  color: #fff;
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-box {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-controls {
+  height: 10%;
+  background: #b6b6b6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.game-box .row .box {
+  font-size: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 0px;
+  cursor: pointer;
+
+  border: solid 1px #111;
+}
+
+.game-box .row .box:hover {
+  background: #008055;
+  color: #fff;
+}
+.exit,
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 8px;
+}
+
+.exit h5 {
+  color: #fff;
+  background: #a70d21;
+
+  padding: 10px 50px;
+}
+
+.restart h5 {
+  color: #fff;
+  background: #0da74d;
+
+  padding: 10px 30px;
+}
+
+/* Phones under tablet */
+@media only screen and (max-width: 767px) {
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .s-container {
+    width: 25%;
+  }
+
+  .game-container {
+    font-size: 15em;
+  }
+
+  .game-record-bar {
+    padding: 30px;
+  }
+
+  .game-box .row .box {
+    font-size: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 0px;
+    cursor: pointer;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 992px) {
+  .s-container {
+    width: 15%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-bottom: -10px;
+  }
+
+  100% {
+    margin-bottom: 0px;
+  }
+}
+
+.fadeHover:hover {
+  animation: fade 0.5s;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* My Parameters */
+.hidden {
+  display: none !important;
+}
+
+.bevel-down {
+  box-shadow: inset #000 2px 3px 1px;
+}
