@@ -1,63 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Playground</title>
 
-
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app.css" />
 
     <!-- CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
 
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
     <div class="main-container">
-        <div class="start-items">
-            <div class="s-heading">
-                <h4>switch me!</h4>
-            </div>
-            <div class="s-container" onclick="startGame()">
-                <div class="s-ball"></div>
-                <div class="s-start">START</div>
-            </div>
+      <div class="start-items">
+        <div class="s-heading">
+          <h4>switch me!</h4>
+        </div>
+        <div class="s-container" onclick="startGame()">
+          <div class="s-ball"></div>
+          <div class="s-start">START</div>
+        </div>
+      </div>
+
+      <div class="tip-container hidden">
+        <h4 class="fade">
+          Remember the animal shown
+          <br />
+          Then select it from the list of options!
+        </h4>
+      </div>
+
+      <div class="game-container hidden">
+        <div class="game-record-bar">
+          <div class="streak"><h5>Streaks: 0</h5></div>
+          <div class="current-score"><h5>Score: 0</h5></div>
         </div>
 
-        <div class="game-container hidden">
-            <div class="game-record-bar">
-                <div class="streak"><h5>Streaks: 0</h5></div>
-                <div class="current-score"><h5>Score: 0</h5></div>
+        <div class="container game-box">
+          <div class="row">
+            <div class="col-6 col-md-4 box-1 box" onclick="checkEntry(0)">
+              <div class="object">
+                <img src="img/a (1).svg" class="img-fluid" />
+              </div>
+            </div>
+            <div class="col-6 col-md-4 box-2 box" onclick="checkEntry(1)">
+              <div class="object">B</div>
             </div>
 
-            <div class="container game-box">
-                <div class="row">
-                    <div class="col-6 col-md-4 box-1 box" onclick="checkEntry(0)"><div class="object"> A </div></div>
-                    <div class="col-6 col-md-4 box-2 box" onclick="checkEntry(1)"><div class="object"> B </div></div> 
-
-                    <div class="col-6 col-md-4 box-3 box" onclick="checkEntry(2)"><div class="object "> C </div></div>
-                    <div class="col-6 col-md-4 box-4 box" onclick="checkEntry(3)"><div class="object"> D </div></div>
-
-                    <div class="col-6 col-md-4 box-5 box" onclick="checkEntry(4)"><div class="object"> E </div></div>
-
-
-                    <div class="col-6 col-md-4 box-5 box" onclick="checkEntry(5)"><div class="object"> F </div></div>
-                </div>
+            <div class="col-6 col-md-4 box-3 box" onclick="checkEntry(2)">
+              <div class="object">C</div>
+            </div>
+            <div class="col-6 col-md-4 box-4 box" onclick="checkEntry(3)">
+              <div class="object">D</div>
             </div>
 
-            <div class="game-controls container-fluid">
-                <div class="row">
-                    <div class="col-6 exit"><h5>EXIT</h5></div>
-                    <div class="col-6 restart" onclick="restart()"><h5>RESTART</h5></div>
-                </div>
+            <div class="col-6 col-md-4 box-5 box" onclick="checkEntry(4)">
+              <div class="object">E</div>
             </div>
+
+            <div class="col-6 col-md-4 box-5 box" onclick="checkEntry(5)">
+              <div class="object">F</div>
+            </div>
+          </div>
         </div>
+
+        <div class="game-controls container-fluid">
+          <div class="row">
+            <div class="col-6 exit" onclick="exit()"><h5>EXIT</h5></div>
+            <div class="col-6 restart" onclick="restart()">
+              <h5>RESTART</h5>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <div class="dialog-container hidden">
+      <div class="dialog-content">
+        <h5 class="dialog-heading">
+          <i class="fas fa-info-circle"></i> Dialog
+        </h5>
+        <h6 class="dialog-text">Do you want to restart?</h6>
+      </div>
+
+      <div class="dialog-buttons">
+        <button class="button-1" onclick="restart('yes')">
+          <i class="fas fa-angry"></i> Yes
+        </button>
+
+        <button class="button-2" onclick="restart('no')">
+          <i class="fas fa-smile"></i> No
+        </button>
+      </div>
+    </div>
+
+    <div class="gameOver-container hidden">
+      <div class="gameOver-content">
+        <i class="fas fa-angry"></i>
+        <h3>GAME OVER</h3>
+      </div>
+
+      <div class="dialog-buttons">
+        <button class="button-1" onclick="restart('yes')">
+          <i class="fas fa-angry"></i> Restart
+        </button>
+
+        <button class="button-2" onclick="exit()">
+          <i class="fas fa-smile"></i> Exit
+        </button>
+      </div>
+    </div>
+
+    <audio id="bgAudio" src="audio/background.mp3" preload="auto" loop>
+      Audio File not supported
+    </audio>
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
