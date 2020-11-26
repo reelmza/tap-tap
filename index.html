@@ -25,7 +25,7 @@
     <div class="main-container">
       <div class="start-items">
         <div class="s-heading">
-          <h4>switch me!</h4>
+          <h4>click to start!</h4>
         </div>
         <div class="s-container" onclick="startGame()">
           <div class="s-ball"></div>
@@ -43,8 +43,22 @@
 
       <div class="game-container hidden">
         <div class="game-record-bar">
-          <div class="streak"><h5>Streaks: 0</h5></div>
-          <div class="current-score"><h5>Score: 0</h5></div>
+          <div class="mylogo">
+            <img src="img/a (7).svg" alt="mylogo" class="img-fluid" />
+            <div class="logo-text ml-1 mt-n1">
+              <h6>Tap</h6>
+              <h6>App</h6>
+            </div>
+          </div>
+
+          <div class="records">
+            <div class="streak mr-2">
+              <h6><i class="fas fa-crown"></i> 0</h6>
+            </div>
+            <div class="current-score">
+              <h6><i class="fas fa-poll"></i> 0</h6>
+            </div>
+          </div>
         </div>
 
         <div class="container game-box">
@@ -77,9 +91,11 @@
 
         <div class="game-controls container-fluid">
           <div class="row">
-            <div class="col-6 exit" onclick="exit()"><h5>EXIT</h5></div>
+            <div class="col-6 exit" onclick="exit()">
+              <h5><i class="fas fa-reply mr-1"></i> EXIT</h5>
+            </div>
             <div class="col-6 restart" onclick="restart()">
-              <h5>RESTART</h5>
+              <h5><i class="fas fa-undo mr-1"> </i>RESTART</h5>
             </div>
           </div>
         </div>
@@ -96,28 +112,35 @@
 
       <div class="dialog-buttons">
         <button class="button-1" onclick="restart('yes')">
-          <i class="fas fa-angry"></i> Yes
+          <i class="fas fa-history"></i> Yes
         </button>
 
         <button class="button-2" onclick="restart('no')">
-          <i class="fas fa-smile"></i> No
+          <i class="fas fa-times"></i> No
         </button>
       </div>
     </div>
 
     <div class="gameOver-container hidden">
       <div class="gameOver-content">
-        <i class="fas fa-angry"></i>
-        <h3>GAME OVER</h3>
+        <img
+          src="img/a (7).svg"
+          alt="game over image"
+          class="img-fluid gameOver-image"
+        />
+        <div>
+          <h4>GAME OVER</h4>
+          <h6>Wrong Animal!</h6>
+        </div>
       </div>
 
       <div class="dialog-buttons">
-        <button class="button-1" onclick="restart('yes')">
-          <i class="fas fa-angry"></i> Restart
+        <button class="button-1 mr-2" onclick="restart('yes')">
+          <i class="fas fa-history"></i> Play Again
         </button>
 
         <button class="button-2" onclick="exit()">
-          <i class="fas fa-smile"></i> Exit
+          <i class="fas fa-reply"></i> Exit
         </button>
       </div>
     </div>

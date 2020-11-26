@@ -90,18 +90,18 @@ function startGame() {
   startItems.classList.add("hidden");
   tipContainer.classList.remove("hidden");
 
-  setTimeout(function () {
-    tipContainer.innerHTML = "<h1 class='fade'> GO!" + "</h1>";
-  }, 4000);
+  // setTimeout(function () {
+  //   tipContainer.innerHTML = "<h1 class='fade'> GO!" + "</h1>";
+  // }, 4000);
 
   return setTimeout(function () {
     tipContainer.classList.add("hidden");
     tipContainer.innerHTML = oldTip;
     gameContainer.classList.remove("hidden");
 
-    bgMusic.volume = 0.5;
+    bgMusic.volume = 0.2;
     return makeRandom();
-  }, 7000);
+  }, 500);
 }
 
 function exit() {
@@ -116,6 +116,9 @@ function exit() {
   gameContainer.classList.add("hidden");
   tipContainer.classList.add("hidden");
   gameOverContainer.classList.add("hidden");
+
+  scoreIncrement = 0;
+  streakIncrement = 0;
 }
 
 function makeRandom() {
@@ -145,7 +148,8 @@ function makeRandom() {
   currentScore = scoreIncrement * 10;
 
   console.log("SCORE: " + currentScore);
-  barScore.innerHTML = "<h5>" + "Score: " + currentScore + "</h5>";
+  barScore.innerHTML =
+    "<h6>" + "<i class='fas fa-poll'></i> " + currentScore + "</h6>";
 
   console.log("Target is box " + random);
 
@@ -177,7 +181,7 @@ function restart(input) {
       streakIncrement = 0;
 
       playAaudio("click");
-      bgMusic.volume = 0.5;
+      bgMusic.volume = 0.2;
       bgMusic.play();
 
       dialogBox.classList.add("hidden");
@@ -190,7 +194,7 @@ function restart(input) {
     if (input === "no") {
       playAaudio("fail");
       bgMusic.play();
-      bgMusic.volume = 0.5;
+      bgMusic.volume = 0.2;
 
       dialogBox.classList.add("hidden");
       return mainContainer.classList.remove("disabled");

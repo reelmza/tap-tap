@@ -53,7 +53,7 @@ button:focus {
   width: 40%;
 
   border-radius: 40px;
-  box-shadow: inset #000 -2px -3px 1px;
+  box-shadow: inset -2px -3px 1px #000, inset -7px -6px 1px #d1d1d1;
 
   display: flex;
   align-items: center;
@@ -63,21 +63,20 @@ button:focus {
 }
 
 .s-container:hover {
-  background: greenyellow;
+  background: #fff8d3;
 }
 
 .s-heading {
   font-size: 8em;
-  margin-bottom: 5px;
 }
 
 .s-ball {
   height: 30px;
   width: 30px;
   border: solid 2px #000;
-  box-shadow: inset #000 -2px -3px 1px;
+  box-shadow: inset -3px -4px 1px #aa772a;
 
-  background: green;
+  background: #e7a747;
 
   margin-left: 5%;
   margin-bottom: 2px;
@@ -85,11 +84,12 @@ button:focus {
 }
 
 .s-start {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-left: 10px;
 
-  margin-top: -5px;
+  margin-top: -4px;
   font-weight: bold;
+  color: #000;
 }
 
 /* Tip container */
@@ -113,7 +113,13 @@ button:focus {
 }
 
 .game-record-bar {
-  background: #008055;
+  background: rgb(186, 134, 39);
+  background: linear-gradient(
+    351deg,
+    rgba(186, 134, 39, 1) 35%,
+    rgba(129, 88, 13, 1) 100%
+  );
+
   color: #fff;
   width: 100%;
   height: 10%;
@@ -121,6 +127,23 @@ button:focus {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.mylogo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.mylogo img {
+  height: 40px;
+}
+
+.logo-text h6 {
+  margin: 0px;
+}
+
+.records {
+  display: flex;
 }
 
 .game-box {
@@ -132,7 +155,7 @@ button:focus {
 
 .game-controls {
   height: 10%;
-  background: #b6b6b6;
+  background: #eeeeee;
 
   display: flex;
   align-items: center;
@@ -153,7 +176,7 @@ button:focus {
 }
 
 .game-box .row .box:hover {
-  background: #eee;
+  background: #ececec;
 }
 
 .exit,
@@ -167,14 +190,18 @@ button:focus {
 
 .exit h5 {
   color: #fff;
-  background: #a70d21;
+  background: #9e762b;
+  display: flex;
+  align-items: center;
 
   padding: 10px 50px;
 }
 
 .restart h5 {
   color: #fff;
-  background: #0da74d;
+  background: #9e762b;
+  display: flex;
+  align-items: center;
 
   padding: 10px 30px;
 }
@@ -184,11 +211,12 @@ button:focus {
 .gameOver-container {
   position: absolute;
   top: 50;
-  width: 300px;
-  height: 150px;
+  width: 280px;
+  height: 140px;
   background: #fff;
   border: solid 1px #000;
-  box-shadow: #000 2px 3px 1px;
+  box-shadow: #000 2px 2px 1px;
+  border-radius: 5px;
 
   display: flex;
   flex-direction: column;
@@ -211,24 +239,28 @@ button:focus {
 
 .button-1,
 .button-2 {
-  margin: 5px 0px;
+  margin: 10px 0px;
   padding: 5px 20px;
 
   border: solid 1px #000;
+  border-radius: 5px;
   box-shadow: #000 1px 1px 1px;
 
   background: #fff;
+  color: #000;
 }
 
 .dialog-buttons button:hover {
-  background: #008055;
-  color: #fff;
+  color: #cf9948;
 }
 
 /* Game Over  */
 .gameOver-container {
-  height: 200px;
-  align-items: start;
+  height: 195px;
+  width: 280px;
+  align-items: center;
+
+  color: #c78b46;
 }
 
 .gameOver-content {
@@ -244,6 +276,17 @@ button:focus {
   height: 300px;
 }
 
+.gameOver-content img {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.gameOver-content div h6,
+.gameOver-content div h4 {
+  margin: 0px;
+}
+
+/* Animals image */
 .object img {
   height: 70px;
 }
@@ -287,13 +330,17 @@ button:focus {
   }
 }
 
+.shake {
+  animation: shake 2s;
+  animation-iteration-count: infinite;
+}
 @keyframes shake {
   0% {
-    margin-bottom: -10px;
+    margin-left: 0px;
   }
 
   100% {
-    margin-bottom: 0px;
+    margin-left: 5px;
   }
 }
 
