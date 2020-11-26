@@ -98,12 +98,16 @@ function startGame() {
     tipContainer.classList.add("hidden");
     tipContainer.innerHTML = oldTip;
     gameContainer.classList.remove("hidden");
+
+    bgMusic.volume = 0.5;
     return makeRandom();
   }, 7000);
 }
 
 function exit() {
   playAaudio("click");
+  bgMusic.pause();
+
   mainContainer.classList.remove("disabled");
 
   startButton.classList.remove("bevel-down");
@@ -173,6 +177,7 @@ function restart(input) {
       streakIncrement = 0;
 
       playAaudio("click");
+      bgMusic.volume = 0.5;
       bgMusic.play();
 
       dialogBox.classList.add("hidden");
@@ -185,6 +190,8 @@ function restart(input) {
     if (input === "no") {
       playAaudio("fail");
       bgMusic.play();
+      bgMusic.volume = 0.5;
+
       dialogBox.classList.add("hidden");
       return mainContainer.classList.remove("disabled");
     }
