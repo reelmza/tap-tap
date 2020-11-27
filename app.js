@@ -9,6 +9,7 @@ const box = document.getElementsByClassName("box");
 const tipContainer = document.getElementsByClassName("tip-container")[0];
 
 const dialogBox = document.getElementsByClassName("dialog-container")[0];
+const comboBox = document.getElementsByClassName("dialog-container")[1];
 
 const gameOverContainer = document.getElementsByClassName(
   "gameOver-container"
@@ -32,7 +33,7 @@ function playAaudio(input) {
 }
 
 // Distribute images & class it on load
-function distributeImages() {
+function distributeImages(input) {
   const img = {
     0:
       "<img src='img/a (" +
@@ -66,6 +67,10 @@ function distributeImages() {
   };
   for (let i = 0; i < 6; i++) {
     tapBox[i].innerHTML = img[i];
+  }
+
+  if (input === "request") {
+    makeRandom();
   }
 
   return console.log(img[0]);
@@ -157,8 +162,16 @@ function makeRandom() {
     scoreIncrement = 0;
     streakIncrement++;
 
-    barStreak.innerHTML = "<h5> Streaks: " + streakIncrement + "</h5>";
-    return console.log("TIME PASSED");
+    fail.play();
+    bgMusic.pause();
+
+    barStreak.innerHTML =
+      "<h6><i class='fas fa-crown'></i> " + streakIncrement + "</h6>";
+
+    mainContainer.classList.add("disabled");
+    comboBox.classList.remove("hidden");
+
+    return console.log("COMBO!");
   }
 }
 
@@ -207,4 +220,12 @@ function restart(input) {
   bgMusic.pause();
   mainContainer.classList.add("disabled");
   return dialogBox.classList.remove("hidden");
+}
+
+function resumeGame() {
+  mainContainer.classList.remove("disabled");
+  comboBox.classList.add("hidden");
+
+  bgMusic.play();
+  return makeRandom();
 }

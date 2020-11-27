@@ -17,7 +17,8 @@ body {
   line-height: 1.5;
 
   background: #333;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", arial;
+  font-family: "Nerko One", "Trebuchet MS", "Lucida Sans Unicode",
+    "Lucida Grande", arial !important;
 }
 
 /* Top initializatio  */
@@ -50,7 +51,7 @@ button:focus {
 .s-container {
   border: solid 3px #000;
   height: 8%;
-  width: 40%;
+  width: 44%;
 
   border-radius: 40px;
   box-shadow: inset -2px -3px 1px #000, inset -7px -6px 1px #d1d1d1;
@@ -88,7 +89,6 @@ button:focus {
   margin-left: 10px;
 
   margin-top: -4px;
-  font-weight: bold;
   color: #000;
 }
 
@@ -107,18 +107,8 @@ button:focus {
   justify-content: space-between;
 }
 
-.game-container marquee {
-  width: 50px;
-  height: 30px;
-}
-
 .game-record-bar {
-  background: rgb(186, 134, 39);
-  background: linear-gradient(
-    351deg,
-    rgba(186, 134, 39, 1) 35%,
-    rgba(129, 88, 13, 1) 100%
-  );
+  background: #015f5a;
 
   color: #fff;
   width: 100%;
@@ -142,8 +132,17 @@ button:focus {
   margin: 0px;
 }
 
+.logo-text h6:nth-child(1) {
+  margin-bottom: -4px;
+}
+
 .records {
   display: flex;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", arial;
+}
+
+.records h6 {
+  margin: 0px;
 }
 
 .game-box {
@@ -151,17 +150,27 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 5%;
 }
 
 .game-controls {
   height: 10%;
-  background: #eeeeee;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+
+  position: fixed;
+  bottom: 0;
+}
+
+.game-control-row {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+
+  height: 100%;
+  width: 100vw;
 }
 
 .game-box .row .box {
@@ -179,31 +188,35 @@ button:focus {
   background: #ececec;
 }
 
-.exit,
-.restart {
+.gameControlBtn {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding-top: 8px;
+  width: 100%;
+  height: 100%;
+
+  font-size: 20px;
+
+  color: #222;
 }
 
-.exit h5 {
-  color: #fff;
-  background: #9e762b;
-  display: flex;
-  align-items: center;
-
-  padding: 10px 50px;
+.gameControlBtn:nth-child(1),
+.gameControlBtn:nth-child(3) {
+  background: #e0e0e0;
 }
 
-.restart h5 {
-  color: #fff;
-  background: #9e762b;
-  display: flex;
-  align-items: center;
+.gameControlBtn:nth-child(2),
+.gameControlBtn:nth-child(4) {
+  background: #ececec;
+}
 
-  padding: 10px 30px;
+.gameControlBtn:hover {
+  font-size: 26px;
+}
+.gameControlBtn h6 {
+  margin: 0px;
+  display: none;
 }
 
 /* Dialog box */
@@ -214,13 +227,17 @@ button:focus {
   width: 280px;
   height: 140px;
   background: #fff;
-  border: solid 1px #000;
+  border: solid 1px rgb(0, 83, 56);
   box-shadow: #000 2px 2px 1px;
   border-radius: 5px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.combo {
+  height: 190px;
 }
 
 .dialog-heading {
@@ -251,7 +268,7 @@ button:focus {
 }
 
 .dialog-buttons button:hover {
-  color: #cf9948;
+  color: #015f40;
 }
 
 /* Game Over  */
@@ -259,8 +276,6 @@ button:focus {
   height: 195px;
   width: 280px;
   align-items: center;
-
-  color: #c78b46;
 }
 
 .gameOver-content {
@@ -294,6 +309,16 @@ button:focus {
 @media only screen and (max-width: 767px) {
   .tip-container h4 {
     font-size: 20px;
+  }
+
+  .game-controls {
+    height: 7.5%;
+  }
+
+  .game-box {
+    height: 83%;
+
+    margin-bottom: 9.5%;
   }
 }
 
