@@ -95,9 +95,9 @@ function startGame() {
   startItems.classList.add("hidden");
   tipContainer.classList.remove("hidden");
 
-  // setTimeout(function () {
-  //   tipContainer.innerHTML = "<h1 class='fade'> GO!" + "</h1>";
-  // }, 4000);
+  setTimeout(function () {
+    tipContainer.innerHTML = "<h1 class='fade'> GO!" + "</h1>";
+  }, 4000);
 
   return setTimeout(function () {
     tipContainer.classList.add("hidden");
@@ -106,7 +106,7 @@ function startGame() {
 
     bgMusic.volume = 0.2;
     return makeRandom();
-  }, 500);
+  }, 8000);
 }
 
 function exit() {
