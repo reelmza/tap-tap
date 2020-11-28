@@ -3,10 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playground</title>
+    <title>Zoo-Tap Game</title>
 
-    <!-- STYLESHEET -->
+    <!-- StyleSheet -->
     <link rel="stylesheet" href="app.css" />
+
+    <!-- Meta -->
+    <meta name="theme-color" content="#015f5a" />
+    <meta
+      name="description"
+      content="Try and memorize flashing animal images and re-tap on them to earn a point!"
+    />
+
+    <!-- Open Graph -->
+    <meta name="og:type" content="website" />
+    <meta name="og:title" content="Zoo-Tap Game" />
+    <meta
+      name="og:description"
+      content="Try and memorize flashing animal images and re-tap on them to earn a point"
+    />
+    <meta name="og:url" content="zootap.netlify.app" />
+    <meta name="og:site_name" content="Zoo-Tap" />
+    <meta
+      name="og:image"
+      content="https://zootap.netlify.app/img/asset/ogImage.png"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Zoo-Tap Game" />
+
+    <meta
+      name="twitter:description"
+      content="Try and memorize flashing animal images and re-tap on them to earn a point"
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://zootap.netlify.app/img/asset/ogImage.png"
+    />
+
+    <meta name="twitter:site" content="@reelmza" />
+
+    <meta name="twitter:creator" content="@reelmza" />
 
     <!-- CDN -->
     <link
@@ -32,11 +70,11 @@
     <div class="main-container">
       <div class="start-items">
         <div class="s-heading">
-          <h4>click to start!</h4>
+          <h4>U ready?</h4>
         </div>
         <div class="s-container" onclick="startGame()">
           <div class="s-ball"></div>
-          <div class="s-start">START</div>
+          <div class="s-start">Lets Go!</div>
         </div>
       </div>
 
@@ -51,10 +89,10 @@
       <div class="game-container hidden">
         <div class="game-record-bar">
           <div class="mylogo">
-            <img src="img/a (7).svg" alt="mylogo" class="img-fluid" />
+            <img src="img/asset/a (7).svg" alt="mylogo" class="img-fluid" />
             <div class="logo-text ml-1 mt-n1">
-              <h6>Tap</h6>
-              <h6>App</h6>
+              <h6>Zooo</h6>
+              <h6>Tap!</h6>
             </div>
           </div>
 
@@ -72,7 +110,7 @@
           <div class="row">
             <div class="col-6 col-md-4 box-1 box" onclick="checkEntry(0)">
               <div class="object">
-                <img src="img/a (1).svg" class="img-fluid" />
+                <img src="img/asset/a (1).svg" class="img-fluid" />
               </div>
             </div>
             <div class="col-6 col-md-4 box-2 box" onclick="checkEntry(1)">
@@ -173,7 +211,7 @@
     <div class="gameOver-container hidden">
       <div class="gameOver-content">
         <img
-          src="img/a (40).svg"
+          src="img/asset/a (40).svg"
           alt="game over image"
           class="img-fluid gameOver-image"
         />

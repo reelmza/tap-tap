@@ -36,32 +36,32 @@ function playAaudio(input) {
 function distributeImages(input) {
   const img = {
     0:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (10 - 1) + 1) +
       ").svg' class='img-fluid' />",
 
     1:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (19 - 10) + 10) +
       ").svg' class='img-fluid' />",
 
     2:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (26 - 19) + 19) +
       ").svg' class='img-fluid' />",
 
     3:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (37 - 26) + 26) +
       ").svg' class='img-fluid' />",
 
     4:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (44 - 37) + 37) +
       ").svg' class='img-fluid' />",
 
     5:
-      "<img src='img/a (" +
+      "<img src='img/asset/a (" +
       Math.floor(Math.random() * (51 - 44) + 44) +
       ").svg' class='img-fluid' />",
   };
